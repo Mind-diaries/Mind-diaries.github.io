@@ -47,6 +47,9 @@
                                 <a href="sukanya.html">Sukanya Goswami</a>
                                 on August 06, 2021
                             </span>
+                            <h2 class ="text-end text-info " id="count" size=></h2>
+                                
+                                <h5 class="text-end">People read this post</h5>
                         </div>
                     </div>
                 </div>
@@ -123,3 +126,17 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
+<script>
+    const countEl= document.getElementById('count');
+    updateVisitCount();
+
+    function updateVisitCount(){
+        fetch('https://api.countapi.xyz/update/mind-diaries/c9f220ea-8364-4a86-8c9d-6e7ce60906ba/?amount=1')
+        .then(res => res.json())
+        .then(res =>{
+            countEl.innerHTML = res.value;
+        });
+    }
+
+</script>
+
